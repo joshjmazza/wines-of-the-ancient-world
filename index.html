@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wines of the Ancient World</title>
+<meta name="description" content="Wines of the Ancient World: a five-wine tasting voyage from Santorini to Mount Ararat, presented by Washline at 1 Hotel South Beach.">
+<meta property="og:title" content="Wines of the Ancient World">
+<meta property="og:description" content="A tasting in five ports, from Santorini to Mount Ararat. Presented by Washline.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101914'/%3E%3Cpath d='M9 8h14c0 7-3 11-7 11s-7-4-7-11zM16 19v6M11 25h10' fill='none' stroke='%23D8CDC7' stroke-width='1.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a ship's logbook. Chart of the voyage up top, five ports as log entries, then Washline's own page in its ink-green brand. */
+:root {
+--paper: #F6F3EC;
+--ink: #221C1A;
+--wine: #5A1A2B;
+--sea: #1F3A52;
+--bronze: #9A7840;
+--muted: #645B55;
+--rule: #D9CFBF;
+--wl-ink: #101914;
+--wl-blush: #D8CDC7;
+--display: "Cinzel", "Trajan Pro", Georgia, serif;
+--body: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+--sans: "Jost", "Futura", "Helvetica Neue", Arial, sans-serif;
+color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+margin: 0;
+background: var(--paper);
+color: var(--ink);
+font-family: var(--body);
+font-size: 20px;
+line-height: 1.5;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.key {
+height: 16px;
+background:
+linear-gradient(var(--bronze), var(--bronze)) top/100% 1px no-repeat,
+linear-gradient(var(--bronze), var(--bronze)) bottom/100% 1px no-repeat,
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M0 13V3h12v7H4V6h4v2' fill='none' stroke='%239A7840' stroke-width='1.2'/%3E%3Cpath d='M0 13h16' stroke='%239A7840' stroke-width='1.2'/%3E%3C/svg%3E") left center/16px 16px repeat-x;
+}
+header.hero { padding: 28px 0 8px; text-align: center; }
+.eyebrow {
+font-family: var(--display);
+font-size: 12px;
+letter-spacing: 0.2em;
+color: var(--bronze);
+margin: 26px 0 14px;
+}
+h1 {
+font-family: var(--display);
+font-weight: 400;
+color: var(--wine);
+margin: 0;
+line-height: 1.0;
+text-wrap: balance;
+}
+h1 .small { display: block; font-size: clamp(22px, 5vw, 30px); letter-spacing: 0.1em; }
+h1 .big { display: block; font-weight: 600; font-size: clamp(34px, 8.6vw, 58px); letter-spacing: 0.0em; }
+.sub { font-style: italic; font-size: clamp(20px, 4.6vw, 26px); color: var(--sea); margin: 12px 0 0; }
+.intro { color: var(--muted); max-width: 34em; margin: 18px auto 0; font-size: 19px; }
+figure.chart { margin: 26px 0 0; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart figcaption { font-size: 15px; color: var(--muted); text-align: center; font-style: italic; margin-top: 6px; }
+nav.ports {
+display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px;
+margin: 22px 0 6px; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+}
+nav.ports a {
+font-family: var(--display); font-size: 12.5px; letter-spacing: 0.1em; text-decoration: none; color: var(--sea);
+padding: 4px 2px;
+}
+nav.ports a:hover { color: var(--wine); }
+section.port { padding: 40px 0 34px; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 64px 1fr; gap: 0 22px; }
+.numeral {
+font-family: var(--display); font-weight: 600; font-size: 40px; color: var(--bronze); line-height: 1; padding-top: 4px; text-align: right;
+}
+.port .label { font-family: var(--display); font-size: 12px; letter-spacing: 0.2em; color: var(--bronze); margin: 0 0 8px; }
+.port h2 {
+font-family: var(--display); font-weight: 600; color: var(--wine); font-size: clamp(24px, 5.4vw, 31px);
+margin: 0; line-height: 1.1; letter-spacing: 0.0em; text-wrap: balance;
+}
+.port .where { font-style: italic; color: var(--sea); margin: 4px 0 14px; font-size: 20px; }
+.port p.story { margin: 0 0 18px; max-width: 34em; }
+dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; padding: 14px 16px; background: #EFEAE0; border-left: 2px solid var(--bronze); font-size: 18px; }
+dl.facts dt { font-family: var(--display); font-size: 11.5px; letter-spacing: 0.1em; color: var(--muted); padding-top: 4px; }
+dl.facts dd { margin: 0; }
+.site { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 16px; font-family: var(--display); font-size: 13px; letter-spacing: 0.1em; color: var(--wine); text-decoration: none; border-bottom: 1px solid var(--bronze); padding-bottom: 3px; }
+.site::after { content: "\2192"; letter-spacing: 0; }
+.site .url { font-family: var(--body); font-style: italic; font-size: 16px; letter-spacing: 0; color: var(--muted); order: 2; }
+.site:hover { color: var(--sea); }
+section.order { padding: 40px 0 46px; }
+section.order h2 { font-family: var(--display); font-weight: 600; color: var(--wine); font-size: 24px; letter-spacing: 0.0em; margin: 0 0 12px; }
+section.order p { margin: 0 0 12px; max-width: 34em; }
+/* Washline: the firm's own brand world */
+.washline { background: var(--wl-ink); color: var(--wl-blush); padding: 56px 0 50px; }
+.washline .mark { width: 168px; color: var(--wl-blush); display: block; margin: 0 0 30px; }
+.washline .kicker { font-family: var(--sans); font-weight: 400; font-size: 12.5px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.7; margin: 0 0 12px; }
+.washline h2 { font-family: var(--sans); font-weight: 300; font-size: clamp(28px, 6.4vw, 40px); line-height: 1.1; margin: 0 0 18px; letter-spacing: 0.0em; text-wrap: balance; color: #F2ECE8; }
+.washline p.lede { font-family: var(--body); font-size: 21px; max-width: 32em; margin: 0 0 34px; }
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0 34px; margin: 0 0 34px; padding: 0; list-style: none; }
+.services li { border-top: 1px solid rgba(216, 205, 199, 0.2); padding: 16px 0 20px; }
+.services h3 { font-family: var(--sans); font-weight: 500; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 6px; color: #F2ECE8; }
+.services p { margin: 0; font-size: 18.5px; line-height: 1.4; }
+.washline .work { font-size: 19px; max-width: 34em; margin: 0 0 30px; }
+.contact { display: flex; flex-wrap: wrap; gap: 14px 30px; align-items: baseline; border-top: 1px solid rgba(216, 205, 199, 0.2); padding-top: 22px; font-family: var(--sans); font-weight: 300; font-size: 17px; }
+.contact strong { font-weight: 500; letter-spacing: 0.0em; }
+.contact a { color: #F2ECE8; text-underline-offset: 4px; }
+footer { background: var(--wl-ink); color: var(--wl-blush); padding: 0 0 36px; font-family: var(--sans); font-size: 13.5px; letter-spacing: 0.0em; opacity: 0.9; }
+footer .wrap { border-top: 1px solid rgba(216, 205, 199, 0.1); padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: space-between; }
+@media (max-width: 520px) {
+body { font-size: 19px; }
+section.port { grid-template-columns: 1fr; }
+.numeral { text-align: left; font-size: 30px; margin-bottom: 8px; }
+dl.facts { grid-template-columns: 1fr; gap: 0; }
+dl.facts dd { margin-bottom: 8px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+html { scroll-behavior: smooth; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="key" aria-hidden="true" style="margin-top:22px"></div>
+<header class="hero">
+<p class="eyebrow">A tasting in five ports</p>
+<h1><span class="small">Wines of the</span><span class="big">Ancient World</span></h1>
+<p class="sub">An Odyssey across the wine-dark sea</p>
+<p class="intro">Homer’s sailors crossed a wine-dark sea. Tonight we follow wine itself: out from the Aegean to the Caucasus, down the Phoenician coast, across the Adriatic, and home at last to the mountain where wine began.</p>
+</header>
+<figure class="chart">
+<svg viewBox="0 0 680 300" role="img" aria-labelledby="chart-title">
+<title id="chart-title">Chart of tonight’s voyage: Santorini, Kakheti, the Bekaa Valley, Pelješac, then Armavir below Mount Ararat</title>
+<g stroke="#D9CFBF" stroke-width="0.8">
+<line x1="0" y1="0" x2="680" y2="0"/><line x1="0" y1="86" x2="680" y2="86"/><line x1="0" y1="171" x2="680" y2="171"/><line x1="0" y1="257" x2="680" y2="257"/><line x1="0" y1="299" x2="680" y2="299"/>
+<line x1="120" y1="0" x2="120" y2="300"/><line x1="320" y1="0" x2="320" y2="300"/><line x1="520" y1="0" x2="520" y2="300"/>
+<line x1="1" y1="0" x2="1" y2="300"/><line x1="679" y1="0" x2="679" y2="300"/>
+</g>
+<g font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="15" fill="#8F8579">
+<text x="400" y="40" text-anchor="middle">Black Sea</text>
+<text x="300" y="214" text-anchor="middle">Aegean</text>
+<text x="560" y="292" text-anchor="middle">Mediterranean</text>
+<text x="12" y="152">Adriatic</text>
+</g>
+<g font-family="Cinzel, Georgia, serif" font-size="9" fill="#B3A894" letter-spacing="1">
+<text x="4" y="83">42°N</text><text x="4" y="168">38°N</text><text x="4" y="254">34°N</text>
+<text x="124" y="12">20°E</text><text x="324" y="12">30°E</text><text x="524" y="12">40°E</text>
+</g>
+<path d="M228 184 Q 430 70 634 66 Q 560 170 440 238 C 300 300 120 220 68 45 Q 330 0 600 105" fill="none" stroke="#5A1A2B" stroke-width="1.6" stroke-dasharray="5 5" stroke-linecap="round"/>
+<g font-family="Cinzel, Georgia, serif" fill="#1F3A52">
+<g><circle cx="228" cy="184" r="5.5" fill="#9A7840"/><text x="216" y="172" font-size="13" font-weight="600" text-anchor="end">I</text><text x="204" y="172" font-size="11" text-anchor="end">Santorini</text></g>
+<g><circle cx="634" cy="66" r="5.5" fill="#9A7840"/><text x="664" y="52" font-size="13" font-weight="600" text-anchor="end">II</text><text x="664" y="36" font-size="11" text-anchor="end">Kakheti</text></g>
+<g><circle cx="440" cy="238" r="5.5" fill="#9A7840"/><text x="452" y="256" font-size="13" font-weight="600">III</text><text x="476" y="256" font-size="11">Bekaa Valley</text></g>
+<g><circle cx="68" cy="45" r="5.5" fill="#9A7840"/><text x="34" y="30" font-size="13" font-weight="600">IV</text><text x="56" y="30" font-size="11">Pelješac</text></g>
+<g><circle cx="600" cy="105" r="7" fill="#5A1A2B"/><text x="614" y="124" font-size="13" font-weight="600">V</text><text x="614" y="139" font-size="11">Armavir</text></g>
+</g>
+</svg>
+<figcaption>Tonight’s route, port by port. The voyage ends below Mount Ararat.</figcaption>
+</figure>
+<nav class="ports" aria-label="The five wines">
+<a href="#aegean">I · Santorini</a>
+<a href="#caucasus">II · Georgia</a>
+<a href="#phoenicia">III · Lebanon</a>
+<a href="#adriatic">IV · Croatia</a>
+<a href="#ararat">V · Armenia</a>
+</nav>
+<main>
+<section class="port" id="aegean">
+<div class="numeral" aria-hidden="true">I</div>
+<div>
+<p class="label">Setting sail · The Aegean</p>
+<h2>Santo Wines Assyrtiko</h2>
+<p class="where">Santorini, Greece</p>
+<p class="story">Santorini’s vineyards grow in the ash and pumice left by the Bronze Age eruption that buried the town of Akrotiri. Growers train the vines into low woven baskets called <i>kouloura</i>, which shelter the grapes from the island’s constant wind. Phylloxera never reached the island, so many vines still grow on their own roots. Santo Wines is the island’s growers’ cooperative.</p>
+<dl class="facts">
+<dt>Grape</dt><dd>Assyrtiko</dd>
+<dt>In the glass</dt><dd>Dry and bright, with lemon, salt and crushed stone</dd>
+<dt>Serve</dt><dd>Well chilled, 48–50°F</dd>
+<dt>Pair with</dt><dd>Oysters, grilled fish, feta</dd>
+</dl>
+<a class="site" href="https://santowines.gr" rel="noopener">Visit Santo Wines<span class="url">santowines.gr</span></a>
+</div>
+</section>
+<section class="port" id="caucasus">
+<div class="numeral" aria-hidden="true">II</div>
+<div>
+<p class="label">The edge of the world · The Caucasus</p>
+<h2>Vazisubani Estate “3 Qvevri”</h2>
+<p class="where">Kakheti, Georgia</p>
+<p class="story">Georgia holds the oldest evidence of winemaking yet found, about 8,000 years old. Here the grapes ferment with their skins in <i>qvevri</i>, large clay vessels buried in the ground, a method UNESCO recognizes as cultural heritage. The skin contact gives this white wine its amber color and gentle grip. The estate dates to 1891 and is tied to the noble Chavchavadze family.</p>
+<dl class="facts">
+<dt>Grapes</dt><dd>Kisi, Mtsvane, Rkatsiteli</dd>
+<dt>In the glass</dt><dd>Amber, with dried apricot, honey, black tea and fine tannin</dd>
+<dt>Serve</dt><dd>Cool rather than cold, about 55°F</dd>
+<dt>Pair with</dt><dd>Roast chicken, mushrooms, walnuts, aged cheese</dd>
+</dl>
+<a class="site" href="https://vazisubaniestate.ge" rel="noopener">Visit Vazisubani Estate<span class="url">vazisubaniestate.ge</span></a>
+</div>
+</section>
+<section class="port" id="phoenicia">
+<div class="numeral" aria-hidden="true">III</div>
+<div>
+<p class="label">The sailors’ coast · Phoenicia</p>
+<h2>Château Musar Red</h2>
+<p class="where">Bekaa Valley, Lebanon</p>
+<p class="story">The Phoenicians sailed from this coast and traded wine to every shore of the Mediterranean. Gaston Hochar founded Musar in 1930, and the estate famously kept making wine through Lebanon’s civil war. Musar holds its red back for several years before release, so it arrives already savory and mature.</p>
+<dl class="facts">
+<dt>Grapes</dt><dd>Cabernet Sauvignon, Cinsault, Carignan</dd>
+<dt>In the glass</dt><dd>Medium-bodied, with dried cherry, cedar and spice</dd>
+<dt>Serve</dt><dd>60–64°F. It throws sediment, so stand the bottle upright and pour gently.</dd>
+<dt>Pair with</dt><dd>Lamb, grilled meats, mezze</dd>
+</dl>
+<a class="site" href="https://chateaumusar.com" rel="noopener">Visit Château Musar<span class="url">chateaumusar.com</span></a>
+</div>
+</section>
+<section class="port" id="adriatic">
+<div class="numeral" aria-hidden="true">IV</div>
+<div>
+<p class="label">Calypso’s island · The Adriatic</p>
+<h2>Škaramuča Dingač</h2>
+<p class="where">Pelješac, Croatia</p>
+<p class="story">Dingač’s vines cling to slopes so steep above the sea that growers carried the harvest out by donkey until they cut a tunnel through the hill in the 1970s. Across the channel lies Mljet, which local legend names as Ogygia, the island where Calypso kept Odysseus for seven years. In 1961 Dingač became the first Croatian wine with a protected origin. Its grape, Plavac Mali, is a child of Tribidrag, the variety America knows as Zinfandel.</p>
+<dl class="facts">
+<dt>Grape</dt><dd>Plavac Mali</dd>
+<dt>In the glass</dt><dd>Full-bodied, with dark fruit, currants, dried fig and spice</dd>
+<dt>Serve</dt><dd>60–64°F</dd>
+<dt>Pair with</dt><dd>Grilled lamb, braised meats, hard cheese</dd>
+</dl>
+<a class="site" href="https://www.dingac-skaramuca.hr" rel="noopener">Visit Dingač Skaramuča<span class="url">dingac-skaramuca.hr</span></a>
+</div>
+</section>
+<section class="port" id="ararat">
+<div class="numeral" aria-hidden="true">V</div>
+<div>
+<p class="label">Homecoming · Ararat</p>
+<h2>Karas “Grand Karas”</h2>
+<p class="where">Armavir, Armenia</p>
+<p class="story">In Armenia’s Areni-1 cave, archaeologists found the oldest known winery: a press and fermentation jars about 6,100 years old. Karas farms volcanic soil in the Ararat Valley, below the mountain itself, and takes its name from the Armenian word for the clay amphora. Grand Karas is the estate’s flagship red, made from the best grapes of each harvest. Like Odysseus, we end where the story began.</p>
+<dl class="facts">
+<dt>Grapes</dt><dd>Syrah, Cabernet Franc, Montepulciano</dd>
+<dt>In the glass</dt><dd>Deep ruby and full-bodied, with soft tannins and a long finish</dd>
+<dt>Serve</dt><dd>62–65°F. Decant it if you can.</dd>
+<dt>Pair with</dt><dd>Grilled red meats, rich stews, strong cheese</dd>
+</dl>
+<a class="site" href="https://www.karaswines.com" rel="noopener">Visit Karas Wines<span class="url">karaswines.com</span></a>
+</div>
+</section>
+<section class="order" aria-labelledby="order-title">
+<h2 id="order-title">Why this order</h2>
+<p>We open with the brightest wine and build toward the biggest. The Assyrtiko wakes up the palate. The amber 3 Qvevri has the weight and tannin of a light red, so it bridges the whites and reds. Musar comes before the two big reds, because its mature, savory character would read as thin after them. The voyage closes with the Dingač and the Grand Karas, the two richest wines of the night.</p>
+</section>
+</main>
+</div>
+<section class="washline" aria-labelledby="wl-title">
+<div class="wrap">
+<svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="482 590 1036 822" role="img" aria-label="Wash Line"><path fill="currentColor" d="M 790.3 1327.0 C 771.1 1296.8 747.9 1272.4 721.1 1243.7 C 694.4 1215.0 664.0 1181.9 629.8 1133.9 C 525.1 986.6 506.1 826.7 506.2 730.6 C 506.2 703.5 507.7 681.5 509.1 666.3 C 509.6 662.1 510.0 658.3 510.4 655.2 L 510.4 655.2 C 510.7 652.7 511.0 650.6 511.2 648.9 C 511.5 646.9 511.7 645.4 511.9 644.4 C 512 643.9 512.0 643.5 512.1 643.3 L 512.1 643.0 L 512.1 643.0 C 512.1 643.0 512.1 643.0 512.1 643.0 L 512.1 642.9 C 512.1 642.9 512.1 642.9 512.1 642.8 L 512.1 642.8 C 512.2 642.5 512.2 642.1 512.2 641.8 C 512.2 641.4 512.2 641.1 512.2 640.8 C 512.2 640.8 512.2 640.8 512.2 640.8 C 512.2 640.7 512.1 640.6 512.1 640.5 C 511.8 638.6 510.6 636.9 508.9 635.9 C 504.8 633.7 500.2 635.9 499.0 639.8 C 498.9 640.0 498.9 640.3 498.8 640.6 C 498.8 640.9 492.6 675.5 492.6 730.6 C 492.7 828.4 511.9 991.2 618.8 1141.7 C 649.6 1185.0 677.5 1216.5 702.2 1243.1 C 720.7 1263.1 737.3 1280.4 752.0 1298.0 C 774.1 1324.3 791.9 1351.1 805.6 1389.1 C 807.0 1392.9 808.4 1396.9 809.7 1401.0 L 823.9 1401.0 C 823.6 1400.0 823.2 1399.0 822.9 1398.1 C 814.1 1370.0 803.1 1347.2 790.3 1327.0 M 1189.5 1033.3 C 1188.2 1033.3 1187.0 1033.7 1185.9 1034.3 C 1184.9 1035.0 1184.0 1036.0 1183.5 1037.1 C 1168.1 1069.5 1149.5 1102.0 1126.8 1133.9 C 1096.5 1176.6 1069.4 1207.5 1045.3 1234.1 C 1027.2 1254.0 1010.7 1271.4 995.9 1289.5 C 973.6 1316.5 955.0 1345.1 940.6 1384.6 C 938.6 1389.9 936.8 1395.3 935.0 1401.0 L 949.2 1401.0 C 957.8 1374.5 968.0 1353.4 979.9 1334.4 C 997.9 1305.5 1019.9 1281.8 1046.3 1252.9 C 1072.7 1224.1 1103.2 1190.4 1137.8 1141.7 C 1161.0 1109.1 1180.0 1075.9 1195.6 1043.0 C 1197.8 1038.5 1194.5 1033.3 1189.5 1033.3 "/><path fill="currentColor" d="M 1244.5 642.9 L 1244.6 643.0 C 1244.9 644.8 1250.5 678.1 1250.5 730.6 C 1250.5 735.9 1250.4 741.4 1250.3 747.0 C 1250.2 750.8 1253.3 753.9 1257.1 753.9 C 1260.7 753.9 1263.7 751.0 1263.8 747.3 C 1263.9 741.6 1264.0 736.0 1264.0 730.6 C 1264.0 675.5 1257.9 640.9 1257.8 640.6 C 1257.2 636.9 1253.7 634.5 1250.0 635.1 C 1246.3 635.8 1243.9 639.3 1244.5 642.9 "/><path fill="currentColor" d="M 1251.2 641.8 L 1244.4 641.8 L 1247.2 641.8 L 1244.7 640.5 C 1244.6 640.7 1244.4 641.2 1244.4 641.8 L 1247.2 641.8 L 1244.7 640.5 L 1245.8 641.1 L 1244.8 640.4 L 1244.7 640.5 L 1245.8 641.1 L 1244.8 640.4 L 1245.0 640.5 L 1244.8 640.4 L 1244.8 640.4 L 1245.0 640.5 L 1244.8 640.4 C 1244.8 640.4 1244.0 641.2 1242.4 642.1 C 1239.5 643.7 1234.2 645.7 1227.0 647.6 C 1214.5 650.9 1196.4 654.1 1173.8 657.0 C 1106.2 665.5 999.0 671.1 878.4 671.1 C 775.6 671.1 682.6 667.1 615.4 660.6 C 581.9 657.3 554.7 653.4 536.4 649.2 C 527.2 647.1 520.2 644.9 516.0 642.9 C 513.9 642 512.6 641.0 512.1 640.6 L 512.0 640.4 L 511.9 640.4 L 512.0 640.4 L 511.9 640.4 L 512.0 640.4 L 509.9 641.8 L 512.3 641.8 C 512.3 641.0 512.0 640.4 512.0 640.4 L 509.9 641.8 L 512.3 641.8 L 509.6 641.8 L 512.0 643.0 C 512.1 642.8 512.3 642.3 512.3 641.8 L 509.6 641.8 L 512.0 643.0 L 510.9 642.4 L 512.0 643.1 L 512.0 643.0 L 510.9 642.4 L 512.0 643.1 L 511.8 643.0 L 512.0 643.1 L 512.0 643.1 L 511.8 643.0 L 512.0 643.1 C 512.0 643.1 512.8 642.3 514.3 641.4 C 517.2 639.8 522.6 637.8 529.7 635.9 C 542.2 632.6 560.4 629.4 582.9 626.5 C 650.5 618.0 757.8 612.4 878.4 612.4 C 981.1 612.4 1074.2 616.4 1141.3 622.9 C 1174.9 626.2 1202.0 630.1 1220.4 634.3 C 1229.5 636.4 1236.5 638.6 1240.7 640.6 C 1242.8 641.5 1244.2 642.5 1244.6 642.9 L 1244.8 643.1 L 1244.8 643.1 L 1244.8 643.1 L 1244.8 643.1 L 1244.8 643.1 L 1244.8 643.1 L 1246.8 641.8 L 1244.4 641.8 C 1244.4 642.5 1244.8 643.1 1244.8 643.1 L 1246.8 641.8 L 1244.4 641.8 L 1257.9 641.8 C 1257.9 639.9 1257.4 638.2 1256.7 636.8 C 1255.2 634.0 1253.1 632.2 1250.7 630.7 C 1246.3 627.9 1240.5 625.7 1233.0 623.6 C 1219.9 619.9 1201.6 616.5 1178.8 613.6 C 1110.3 604.6 1001.3 598.9 878.4 598.9 C 775.2 598.9 681.9 602.9 614.1 609.5 C 580.2 612.8 552.7 616.7 533.4 621.1 C 523.6 623.3 516.0 625.7 510.3 628.4 C 507.4 629.7 504.9 631.2 502.8 633.2 C 501.8 634.2 500.8 635.3 500.1 636.8 C 499.3 638.2 498.8 639.9 498.8 641.8 C 498.8 643.6 499.3 645.3 500.1 646.7 C 501.6 649.5 503.7 651.3 506.0 652.8 C 510.4 655.6 516.2 657.8 523.7 659.9 C 536.8 663.6 555.1 667.0 578.0 669.9 C 646.4 678.9 755.4 684.6 878.4 684.6 C 981.5 684.6 1074.9 680.6 1142.6 674.0 C 1176.6 670.7 1204.0 666.8 1223.4 662.4 C 1233.1 660.1 1240.8 657.8 1246.5 655.1 C 1249.4 653.8 1251.8 652.3 1253.9 650.3 C 1255.0 649.3 1255.9 648.2 1256.7 646.7 C 1257.4 645.3 1257.9 643.6 1257.9 641.8 Z M 1251.2 641.8 "/><path fill="currentColor" d="M 670.3 1146.7 C 670.5 1147.0 693.5 1177.9 732.0 1209.0 C 751.2 1224.6 774.3 1240.2 800.4 1251.9 C 826.5 1263.7 855.6 1271.6 886.8 1271.6 C 917.9 1271.6 951.1 1263.7 984.7 1244.0 C 1018.4 1224.3 1052.6 1193.1 1086.4 1146.6 C 1088.6 1143.6 1088.0 1139.4 1084.9 1137.2 C 1081.9 1135.0 1077.7 1135.7 1075.5 1138.7 C 1042.5 1183.9 1009.6 1213.8 977.9 1232.3 C 946.2 1250.8 915.7 1258.1 886.8 1258.1 C 857.9 1258.1 830.7 1250.8 805.9 1239.6 C 768.8 1222.9 737.5 1197.6 715.5 1176.5 C 704.5 1165.9 695.9 1156.4 690.0 1149.5 C 687.1 1146.1 684.8 1143.4 683.3 1141.5 C 682.6 1140.5 682.0 1139.8 681.6 1139.3 L 681.2 1138.8 L 681.1 1138.7 L 681.1 1138.6 C 678.9 1135.6 674.6 1135.0 671.7 1137.3 C 668.7 1139.5 668.1 1143.7 670.3 1146.7 Z M 670.3 1146.7 "/><path fill="currentColor" d="M 746.4 946.1 C 742.4 948.8 735.4 950.2 725.7 950.2 C 721.2 950.2 717.3 949.9 714.1 949.3 C 710.9 948.7 708.3 948 706.2 946.9 C 704.2 948 701.5 948.7 698.3 949.3 C 695.1 949.9 691.3 950.2 686.9 950.2 C 677.1 950.2 670.1 948.8 666.1 946.1 C 661.5 942.7 659.2 936.7 659.2 928.0 L 659.2 839.4 C 659.2 835.7 661.9 833.9 667.5 833.9 C 673.0 833.9 675.8 835.7 675.8 839.4 L 675.8 928.0 C 675.8 931.6 675.8 934.4 675.9 936.5 C 676.0 938.6 676.3 940.0 676.6 940.7 C 677.8 943.3 681.2 944.7 686.9 944.7 C 692.6 944.7 695.9 943.3 697.1 940.7 C 697.6 939.3 697.9 935.2 697.9 928.3 L 697.9 839.4 C 697.9 835.7 700.7 833.9 706.2 833.9 C 711.8 833.9 714.5 835.7 714.5 839.4 L 714.5 928.3 C 714.5 935.2 714.8 939.3 715.4 940.7 C 716.7 943.3 720.1 944.7 725.7 944.7 C 731.3 944.7 734.7 943.3 735.8 940.7 C 736.4 939.3 736.7 935.1 736.7 928.0 L 736.7 839.7 C 736.7 836.0 739.4 834.2 745.0 834.2 C 750.5 834.2 753.3 836.0 753.3 839.7 L 753.3 928.0 C 753.3 936.7 751.0 942.7 746.4 946.1 "/><path fill="currentColor" d="M 844.6 886.6 L 817.0 886.6 L 817.0 856.2 C 817.0 848.7 817.9 844.0 819.8 841.9 C 821.3 840.2 825.0 839.4 830.9 839.4 C 836.6 839.4 840.2 840.2 841.8 841.9 C 843.7 843.8 844.6 848.5 844.6 856.2 Z M 852.2 837.7 C 849.9 836.5 846.9 835.5 843.4 834.9 C 839.9 834.2 835.7 833.9 830.9 833.9 C 820.9 833.9 813.8 835.1 809.5 837.6 C 803.4 840.9 800.4 847.1 800.4 856.2 L 800.4 944.7 C 800.4 948.3 803.1 950.2 808.7 950.2 C 814.2 950.2 817.0 948.3 817.0 944.7 L 817.0 892.0 L 844.6 892.0 L 844.6 944.7 C 844.6 948.3 847.4 950.2 853.1 950.2 C 858.6 950.2 861.4 948.3 861.4 944.7 L 861.4 856.2 C 861.4 847.4 858.3 841.3 852.2 837.7 "/><path fill="currentColor" d="M 960.3 947.1 C 955.6 949.7 948.5 951.0 939.0 951.0 C 929.6 951.0 922.5 949.7 917.7 947.1 C 911.5 943.9 908.4 937.8 908.4 929.0 C 908.4 925.2 911.2 923.2 916.8 923.2 C 922.3 923.2 925.1 925.2 925.1 929.0 C 925.1 932.3 925.3 935.0 925.6 937.1 C 926.0 939.2 926.5 940.8 927.2 941.7 C 929.0 944.1 932.9 945.4 939.0 945.4 C 945.0 945.4 948.9 944.1 950.7 941.7 C 952.0 939.5 952.7 935.3 952.7 929.0 L 952.7 908.9 C 952.7 901.3 951.8 896.5 949.9 894.6 C 948.3 892.9 944.7 892.1 939.0 892.1 C 934.1 892.1 929.9 891.8 926.3 891.2 C 922.8 890.7 919.9 889.7 917.7 888.4 C 911.5 885.0 908.4 878.9 908.4 870.1 L 908.4 855.2 C 908.4 846.4 911.2 840.4 916.8 837.1 C 921.4 834.4 928.8 833.0 939.0 833.0 C 949.2 833.0 956.5 834.4 961.1 837.1 C 966.7 840.5 969.5 846.5 969.5 855.2 C 969.5 858.9 966.7 860.8 961.1 860.8 C 955.5 860.8 952.7 858.9 952.7 855.2 C 952.7 851.9 952.6 849.2 952.3 847.1 C 952.1 845.0 951.6 843.4 950.9 842.4 C 949.1 839.7 945.1 838.4 939.0 838.4 C 933.0 838.4 929.1 839.7 927.2 842.4 C 925.8 844.5 925.1 848.8 925.1 855.2 L 925.1 870.1 C 925.1 873.4 925.3 876.1 925.6 878.2 C 926.0 880.3 926.5 881.9 927.2 882.8 C 929.0 885.3 932.9 886.6 939.0 886.6 C 943.8 886.6 948.0 886.9 951.5 887.6 C 955.0 888.2 958.0 889.2 960.3 890.4 C 966.4 894.0 969.5 900.1 969.5 908.9 L 969.5 929.0 C 969.5 937.8 966.4 943.8 960.3 947.1 "/><path fill="currentColor" d="M 1069.2 950.2 C 1063.6 950.2 1060.8 948.3 1060.8 944.7 L 1060.8 892.0 L 1033.2 892.0 L 1033.2 944.7 C 1033.2 948.3 1030.4 950.2 1024.9 950.2 C 1019.3 950.2 1016.5 948.3 1016.5 944.7 L 1016.5 839.4 C 1016.5 835.7 1019.3 833.9 1024.9 833.9 C 1030.4 833.9 1033.2 835.7 1033.2 839.4 L 1033.2 886.6 L 1060.8 886.6 L 1060.8 839.4 C 1060.8 835.7 1063.6 833.9 1069.2 833.9 C 1074.8 833.9 1077.5 835.7 1077.5 839.4 L 1077.5 944.7 C 1077.5 948.3 1074.8 950.2 1069.2 950.2 "/><path fill="currentColor" d="M 1222.5 950.3 L 1195.0 950.3 C 1185.6 950.3 1178.5 949.0 1173.7 946.3 C 1167.5 943.2 1164.4 937.1 1164.4 928.3 L 1164.4 838.7 L 1164.5 838.7 C 1164.8 835.6 1167.6 834.0 1172.7 834.0 C 1177.8 834.0 1180.6 835.6 1181.0 838.7 L 1181.0 928.3 C 1181.0 931.6 1181.2 934.3 1181.6 936.4 C 1182.0 938.5 1182.5 940.1 1183.1 941.0 C 1184.9 943.4 1188.9 944.7 1195.0 944.7 L 1222.5 944.7 C 1224.4 944.7 1225.4 945.6 1225.4 947.6 C 1225.4 949.4 1224.4 950.3 1222.5 950.3 "/><path fill="currentColor" d="M 1293.3 950.2 L 1265.6 950.2 C 1263.8 950.2 1262.9 949.2 1262.9 947.3 C 1262.9 945.6 1263.8 944.7 1265.6 944.7 L 1270.7 944.7 L 1270.7 839.4 L 1265.3 839.4 C 1263.3 839.4 1262.3 838.5 1262.3 836.9 C 1262.3 834.9 1263.3 833.9 1265.3 833.9 L 1292.9 833.9 C 1294.7 833.9 1295.6 834.9 1295.6 836.9 C 1295.6 838.5 1294.7 839.4 1292.9 839.4 L 1287.3 839.4 L 1287.3 944.7 L 1293.3 944.7 C 1295.1 944.7 1296.0 945.6 1296.0 947.3 C 1296.0 949.2 1295.1 950.2 1293.3 950.2 "/><path fill="currentColor" d="M 1390.9 950.3 C 1385.2 950.3 1382.4 948.4 1382.4 944.7 L 1382.4 856.2 C 1382.4 852.9 1382.3 850.2 1382.1 848.1 C 1381.8 845.9 1381.3 844.4 1380.6 843.3 C 1378.8 840.7 1374.8 839.4 1368.7 839.4 C 1362.7 839.4 1358.8 840.7 1356.9 843.3 C 1355.5 845.5 1354.8 849.8 1354.8 856.2 L 1354.8 944.7 C 1354.8 948.4 1352.0 950.3 1346.5 950.3 C 1340.9 950.3 1338.2 948.4 1338.2 944.7 L 1338.2 856.2 C 1338.2 847.4 1340.9 841.4 1346.5 838.1 C 1351.1 835.4 1358.5 834.0 1368.7 834.0 C 1378.9 834.0 1386.3 835.4 1390.9 838.1 C 1396.4 841.5 1399.2 847.5 1399.2 856.2 L 1399.2 944.7 C 1399.2 948.4 1396.4 950.3 1390.9 950.3 "/><path fill="currentColor" d="M 1504.3 950.2 L 1454.6 950.2 C 1450.7 950.2 1448.2 949.4 1447.1 947.8 C 1447.0 947.3 1446.9 946.8 1446.7 946.2 C 1446.6 945.6 1446.4 945.1 1446.2 944.7 L 1446.2 839.4 C 1446.2 835.7 1449.0 833.9 1454.6 833.9 L 1504.3 833.9 C 1506.3 833.9 1507.3 834.9 1507.3 836.9 C 1507.3 838.5 1506.3 839.4 1504.3 839.4 L 1462.9 839.4 L 1462.9 886.6 L 1493.3 886.6 C 1495.3 886.6 1496.3 887.5 1496.3 889.3 C 1496.3 891.1 1495.3 892.0 1493.3 892.0 L 1462.9 892.0 L 1462.9 944.7 L 1504.3 944.7 C 1506.3 944.7 1507.3 945.6 1507.3 947.3 C 1507.3 949.2 1506.3 950.2 1504.3 950.2 "/></svg>
+<p class="kicker">Tonight’s tasting is presented by Washline</p>
+<h2 id="wl-title">We build hospitality concepts and the beverage programs that make them work.</h2>
+<p class="lede">Washline is a hospitality and beverage consultancy. We help operators, hotels and venues take a concept from first idea to opening night, then run the beverage programs, events and brand partnerships that keep it full.</p>
+<ul class="services">
+<li><h3>Concept development</h3><p>Positioning, menus and the guest experience for bars, restaurants, hotels and cafés, shaped around the numbers that make them work.</p></li>
+<li><h3>Site and lease analysis</h3><p>Comparable rents, the competitive set, licensing paths and LOI terms reviewed before you sign, with a financial model for each scenario.</p></li>
+<li><h3>Specialty beverage programs</h3><p>Wine, cocktail and spirits programs designed and put into service, from sourcing and list building to staff training and launch.</p></li>
+<li><h3>Tastings and events</h3><p>Programs like tonight’s, from choosing and sourcing the wines to the story on the menu.</p></li>
+<li><h3>Brand relationships and RFPs</h3><p>Supplier and brand partnerships managed on your behalf, including RFPs for beverage programs, from the brief to signed terms.</p></li>
+</ul>
+<div class="contact">
+<strong>Josh Mazza, Washline</strong>
+<span><a href="mailto:josh@washlinellc.com">josh@washlinellc.com</a></span>
+<span><a href="tel:+19173288969">+1 (917) 328-8969</a></span>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<span>Presented at 1 Hotel South Beach for Bisnow</span>
+<span>Please enjoy responsibly. 21+</span>
+</div>
+</footer>
+</body>
+</html>
