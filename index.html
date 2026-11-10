@@ -52,7 +52,7 @@ header.hero { padding: 28px 0 8px; text-align: center; }
 .eyebrow {
 font-family: var(--display);
 font-size: 12px;
-letter-spacing: 0.2em;
+letter-spacing: 0.28em;
 color: var(--bronze);
 margin: 26px 0 14px;
 }
@@ -61,11 +61,11 @@ font-family: var(--display);
 font-weight: 400;
 color: var(--wine);
 margin: 0;
-line-height: 1.0;
+line-height: 1.05;
 text-wrap: balance;
 }
-h1 .small { display: block; font-size: clamp(22px, 5vw, 30px); letter-spacing: 0.1em; }
-h1 .big { display: block; font-weight: 600; font-size: clamp(34px, 8.6vw, 58px); letter-spacing: 0.0em; }
+h1 .small { display: block; font-size: clamp(22px, 5vw, 30px); letter-spacing: 0.12em; }
+h1 .big { display: block; font-weight: 600; font-size: clamp(34px, 8.6vw, 58px); letter-spacing: 0.08em; }
 .sub { font-style: italic; font-size: clamp(20px, 4.6vw, 26px); color: var(--sea); margin: 12px 0 0; }
 .intro { color: var(--muted); max-width: 34em; margin: 18px auto 0; font-size: 19px; }
 figure.chart { margin: 26px 0 0; }
@@ -76,7 +76,7 @@ display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px;
 margin: 22px 0 6px; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
 }
 nav.ports a {
-font-family: var(--display); font-size: 12.5px; letter-spacing: 0.1em; text-decoration: none; color: var(--sea);
+font-family: var(--display); font-size: 12.5px; letter-spacing: 0.14em; text-decoration: none; color: var(--sea);
 padding: 4px 2px;
 }
 nav.ports a:hover { color: var(--wine); }
@@ -84,39 +84,64 @@ section.port { padding: 40px 0 34px; border-bottom: 1px solid var(--rule); displ
 .numeral {
 font-family: var(--display); font-weight: 600; font-size: 40px; color: var(--bronze); line-height: 1; padding-top: 4px; text-align: right;
 }
-.port .label { font-family: var(--display); font-size: 12px; letter-spacing: 0.2em; color: var(--bronze); margin: 0 0 8px; }
+.port .label { font-family: var(--display); font-size: 12px; letter-spacing: 0.22em; color: var(--bronze); margin: 0 0 8px; }
 .port h2 {
 font-family: var(--display); font-weight: 600; color: var(--wine); font-size: clamp(24px, 5.4vw, 31px);
-margin: 0; line-height: 1.1; letter-spacing: 0.0em; text-wrap: balance;
+margin: 0; line-height: 1.15; letter-spacing: 0.02em; text-wrap: balance;
 }
 .port .where { font-style: italic; color: var(--sea); margin: 4px 0 14px; font-size: 20px; }
 .port p.story { margin: 0 0 18px; max-width: 34em; }
 dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; padding: 14px 16px; background: #EFEAE0; border-left: 2px solid var(--bronze); font-size: 18px; }
-dl.facts dt { font-family: var(--display); font-size: 11.5px; letter-spacing: 0.1em; color: var(--muted); padding-top: 4px; }
+dl.facts dt { font-family: var(--display); font-size: 11.5px; letter-spacing: 0.16em; color: var(--muted); padding-top: 4px; }
 dl.facts dd { margin: 0; }
-.site { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 16px; font-family: var(--display); font-size: 13px; letter-spacing: 0.1em; color: var(--wine); text-decoration: none; border-bottom: 1px solid var(--bronze); padding-bottom: 3px; }
+.site { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 16px; font-family: var(--display); font-size: 13px; letter-spacing: 0.14em; color: var(--wine); text-decoration: none; border-bottom: 1px solid var(--bronze); padding-bottom: 3px; }
 .site::after { content: "\2192"; letter-spacing: 0; }
 .site .url { font-family: var(--body); font-style: italic; font-size: 16px; letter-spacing: 0; color: var(--muted); order: 2; }
 .site:hover { color: var(--sea); }
 section.order { padding: 40px 0 46px; }
-section.order h2 { font-family: var(--display); font-weight: 600; color: var(--wine); font-size: 24px; letter-spacing: 0.0em; margin: 0 0 12px; }
+section.order h2 { font-family: var(--display); font-weight: 600; color: var(--wine); font-size: 24px; letter-spacing: 0.04em; margin: 0 0 12px; }
 section.order p { margin: 0 0 12px; max-width: 34em; }
 /* Washline: the firm's own brand world */
 .washline { background: var(--wl-ink); color: var(--wl-blush); padding: 56px 0 50px; }
 .washline .mark { width: 168px; color: var(--wl-blush); display: block; margin: 0 0 30px; }
-.washline .kicker { font-family: var(--sans); font-weight: 400; font-size: 12.5px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.7; margin: 0 0 12px; }
-.washline h2 { font-family: var(--sans); font-weight: 300; font-size: clamp(28px, 6.4vw, 40px); line-height: 1.1; margin: 0 0 18px; letter-spacing: 0.0em; text-wrap: balance; color: #F2ECE8; }
+.washline .kicker { font-family: var(--sans); font-weight: 400; font-size: 12.5px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.75; margin: 0 0 12px; }
+.washline h2 { font-family: var(--sans); font-weight: 300; font-size: clamp(28px, 6.4vw, 40px); line-height: 1.15; margin: 0 0 18px; letter-spacing: 0.01em; text-wrap: balance; color: #F2ECE8; }
 .washline p.lede { font-family: var(--body); font-size: 21px; max-width: 32em; margin: 0 0 34px; }
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0 34px; margin: 0 0 34px; padding: 0; list-style: none; }
-.services li { border-top: 1px solid rgba(216, 205, 199, 0.2); padding: 16px 0 20px; }
-.services h3 { font-family: var(--sans); font-weight: 500; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 6px; color: #F2ECE8; }
-.services p { margin: 0; font-size: 18.5px; line-height: 1.4; }
+.services li { border-top: 1px solid rgba(216, 205, 199, 0.28); padding: 16px 0 20px; }
+.services h3 { font-family: var(--sans); font-weight: 500; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; margin: 0 0 6px; color: #F2ECE8; }
+.services p { margin: 0; font-size: 18.5px; line-height: 1.45; }
 .washline .work { font-size: 19px; max-width: 34em; margin: 0 0 30px; }
-.contact { display: flex; flex-wrap: wrap; gap: 14px 30px; align-items: baseline; border-top: 1px solid rgba(216, 205, 199, 0.2); padding-top: 22px; font-family: var(--sans); font-weight: 300; font-size: 17px; }
-.contact strong { font-weight: 500; letter-spacing: 0.0em; }
+.contact { display: flex; flex-wrap: wrap; gap: 14px 30px; align-items: baseline; border-top: 1px solid rgba(216, 205, 199, 0.28); padding-top: 22px; font-family: var(--sans); font-weight: 300; font-size: 17px; }
+.contact strong { font-weight: 500; letter-spacing: 0.04em; }
 .contact a { color: #F2ECE8; text-underline-offset: 4px; }
-footer { background: var(--wl-ink); color: var(--wl-blush); padding: 0 0 36px; font-family: var(--sans); font-size: 13.5px; letter-spacing: 0.0em; opacity: 0.9; }
-footer .wrap { border-top: 1px solid rgba(216, 205, 199, 0.1); padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: space-between; }
+.inquiry { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; margin: 0 0 34px; max-width: 640px; }
+.inquiry h3 { grid-column: 1 / -1; font-family: var(--sans); font-weight: 300; font-size: 24px; color: #F2ECE8; margin: 0; letter-spacing: 0.01em; }
+.inquiry p.note { grid-column: 1 / -1; margin: -6px 0 4px; font-size: 18px; }
+.inquiry .field { display: flex; flex-direction: column; gap: 6px; }
+.inquiry .wide { grid-column: 1 / -1; }
+.inquiry label { font-family: var(--sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.8; }
+.inquiry input, .inquiry select, .inquiry textarea {
+font: 400 17px/1.4 var(--sans); color: #F2ECE8; background: rgba(216, 205, 199, 0.06);
+border: 1px solid rgba(216, 205, 199, 0.35); border-radius: 2px; padding: 11px 12px; width: 100%;
+}
+.inquiry select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #D8CDC7 50%), linear-gradient(135deg, #D8CDC7 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 36px; }
+.inquiry select option { color: #101914; }
+.inquiry textarea { min-height: 120px; resize: vertical; }
+.inquiry input:focus, .inquiry select:focus, .inquiry textarea:focus { outline: 2px solid var(--wl-blush); outline-offset: 1px; border-color: var(--wl-blush); }
+.inquiry .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.inquiry .actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.inquiry button {
+font: 500 13px var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--wl-ink); background: var(--wl-blush);
+border: 0; border-radius: 2px; padding: 14px 26px; cursor: pointer;
+}
+.inquiry button:hover { background: #F2ECE8; }
+.inquiry button:disabled { opacity: 0.6; cursor: wait; }
+.inquiry .status { font-family: var(--sans); font-size: 15px; }
+.inquiry .status.error { color: #F3B7A6; }
+@media (max-width: 520px) { .inquiry { grid-template-columns: 1fr; } }
+footer { background: var(--wl-ink); color: var(--wl-blush); padding: 0 0 36px; font-family: var(--sans); font-size: 13.5px; letter-spacing: 0.06em; opacity: 0.9; }
+footer .wrap { border-top: 1px solid rgba(216, 205, 199, 0.18); padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px 22px; justify-content: space-between; }
 @media (max-width: 520px) {
 body { font-size: 19px; }
 section.port { grid-template-columns: 1fr; }
@@ -274,6 +299,25 @@ html { scroll-behavior: smooth; }
 <li><h3>Tastings and events</h3><p>Programs like tonight’s, from choosing and sourcing the wines to the story on the menu.</p></li>
 <li><h3>Brand relationships and RFPs</h3><p>Supplier and brand partnerships managed on your behalf, including RFPs for beverage programs, from the brief to signed terms.</p></li>
 </ul>
+<form class="inquiry" id="inquiry" novalidate>
+<h3>Start a conversation</h3>
+<p class="note">Tell us about your property or project, and Josh will get back to you.</p>
+<div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+<div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="f-company">Company or property</label><input id="f-company" name="company" autocomplete="organization"></div>
+<div class="field"><label for="f-topic">Interested in</label>
+<select id="f-topic" name="interest">
+<option>Concept development</option>
+<option>Site and lease analysis</option>
+<option>Specialty beverage programs</option>
+<option>Tastings and events</option>
+<option>Brand relationships and RFPs</option>
+<option selected>Not sure yet</option>
+</select></div>
+<div class="field wide"><label for="f-message">How can we help?</label><textarea id="f-message" name="message" required></textarea></div>
+<div class="hp" aria-hidden="true"><label for="f-honey">Leave this empty</label><input id="f-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+<div class="actions"><button type="submit" id="f-send">Send message</button><span class="status" id="f-status" role="status" aria-live="polite"></span></div>
+</form>
 <div class="contact">
 <strong>Josh Mazza, Washline</strong>
 <span><a href="mailto:josh@washlinellc.com">josh@washlinellc.com</a></span>
@@ -287,5 +331,50 @@ html { scroll-behavior: smooth; }
 <span>Please enjoy responsibly. 21+</span>
 </div>
 </footer>
+<script>
+(function () {
+var form = document.getElementById("inquiry");
+var status = document.getElementById("f-status");
+var btn = document.getElementById("f-send");
+form.addEventListener("submit", function (e) {
+e.preventDefault();
+status.className = "status";
+if (form.elements._honey.value) { return; }
+var name = form.elements.name.value.trim();
+var email = form.elements.email.value.trim();
+var message = form.elements.message.value.trim();
+if (!name || !message || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+status.className = "status error";
+status.textContent = "Please add your name, a valid email and a short message.";
+return;
+}
+btn.disabled = true; status.textContent = "Sending…";
+fetch("https://formsubmit.co/ajax/josh@washlinellc.com", {
+method: "POST",
+headers: { "Content-Type": "application/json", "Accept": "application/json" },
+body: JSON.stringify({
+name: name, email: email,
+company: form.elements.company.value.trim(),
+interest: form.elements.interest.value,
+message: message,
+_subject: "Washline inquiry from the Wines of the Ancient World page",
+_replyto: email,
+_template: "table"
+})
+}).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+.then(function (res) {
+if (res.ok && String(res.d.success) === "true") {
+form.reset();
+status.textContent = "Thank you. Your message is on its way, and Josh will be in touch soon.";
+} else { throw new Error("send failed"); }
+})
+.catch(function () {
+status.className = "status error";
+status.textContent = "That didn’t send. Please email josh@washlinellc.com instead.";
+})
+.then(function () { btn.disabled = false; });
+});
+})();
+</script>
 </body>
 </html>
