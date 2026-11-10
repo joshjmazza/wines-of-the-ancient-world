@@ -91,6 +91,11 @@ margin: 0; line-height: 1.15; letter-spacing: 0.02em; text-wrap: balance;
 }
 .port .where { font-style: italic; color: var(--sea); margin: 4px 0 14px; font-size: 20px; }
 .port p.story { margin: 0 0 18px; max-width: 34em; }
+figure.photo { margin: 2px 0 18px; }
+figure.photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 2px; background: #E6DFD3; }
+figure.photo figcaption { font-size: 15px; font-style: italic; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+figure.photo .credit { font-style: normal; font-size: 12.5px; letter-spacing: 0.02em; opacity: 0.85; }
+figure.photo .credit a { color: inherit; }
 dl.facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; padding: 14px 16px; background: #EFEAE0; border-left: 2px solid var(--bronze); font-size: 18px; }
 dl.facts dt { font-family: var(--display); font-size: 11.5px; letter-spacing: 0.16em; color: var(--muted); padding-top: 4px; }
 dl.facts dd { margin: 0; }
@@ -206,6 +211,7 @@ html { scroll-behavior: smooth; }
 <p class="label">Setting sail · The Aegean</p>
 <h2>Santo Wines Assyrtiko</h2>
 <p class="where">Santorini, Greece</p>
+<figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Santorini_Kouloura_Assyrtiko_Vine.jpg/1280px-Santorini_Kouloura_Assyrtiko_Vine.jpg" alt="An Assyrtiko vine coiled into a kouloura basket in Santorini’s volcanic soil" width="1280" height="853" decoding="async"><figcaption>An Assyrtiko vine trained into a kouloura basket on Santorini. <span class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Santorini_Kouloura_Assyrtiko_Vine.jpg" rel="noopener">AkatsukiKuro</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener">CC0</a>, via Wikimedia Commons</span></figcaption></figure>
 <p class="story">Santorini’s vineyards grow in the ash and pumice left by the Bronze Age eruption that buried the town of Akrotiri. Growers train the vines into low woven baskets called <i>kouloura</i>, which shelter the grapes from the island’s constant wind. Phylloxera never reached the island, so many vines still grow on their own roots. Santo Wines is the island’s growers’ cooperative.</p>
 <dl class="facts">
 <dt>Grape</dt><dd>Assyrtiko</dd>
@@ -222,6 +228,7 @@ html { scroll-behavior: smooth; }
 <p class="label">The edge of the world · The Caucasus</p>
 <h2>Vazisubani Estate “3 Qvevri”</h2>
 <p class="where">Kakheti, Georgia</p>
+<figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Kindzmarauli-marani-kvevri-hall.jpg/1280px-Kindzmarauli-marani-kvevri-hall.jpg" alt="The mouths of qvevri set into the stone floor of a Georgian wine cellar" width="1280" height="853" loading="lazy" decoding="async"><figcaption>Qvevri buried in the floor of a marani, or wine cellar, in Kakheti. <span class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Kindzmarauli-marani-kvevri-hall.jpg" rel="noopener">Mutialulu</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="noopener">CC0</a>, via Wikimedia Commons</span></figcaption></figure>
 <p class="story">Georgia holds the oldest evidence of winemaking yet found, about 8,000 years old. Here the grapes ferment with their skins in <i>qvevri</i>, large clay vessels buried in the ground, a method UNESCO recognizes as cultural heritage. The skin contact gives this white wine its amber color and gentle grip. The estate dates to 1891 and is tied to the noble Chavchavadze family.</p>
 <dl class="facts">
 <dt>Grapes</dt><dd>Kisi, Mtsvane, Rkatsiteli</dd>
@@ -238,6 +245,7 @@ html { scroll-behavior: smooth; }
 <p class="label">The sailors’ coast · Phoenicia</p>
 <h2>Château Musar Red</h2>
 <p class="where">Bekaa Valley, Lebanon</p>
+<figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Chateau_Barka_Vineyards.png/1280px-Chateau_Barka_Vineyards.png" alt="Rows of vines in Lebanon’s Bekaa Valley beneath snow-capped mountains" width="1280" height="853" loading="lazy" decoding="async"><figcaption>Vineyards in Lebanon’s Bekaa Valley. <span class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Chateau_Barka_Vineyards.png" rel="noopener">HebaAkasheh</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></figcaption></figure>
 <p class="story">The Phoenicians sailed from this coast and traded wine to every shore of the Mediterranean. Gaston Hochar founded Musar in 1930, and the estate famously kept making wine through Lebanon’s civil war. Musar holds its red back for several years before release, so it arrives already savory and mature.</p>
 <dl class="facts">
 <dt>Grapes</dt><dd>Cabernet Sauvignon, Cinsault, Carignan</dd>
@@ -254,6 +262,7 @@ html { scroll-behavior: smooth; }
 <p class="label">Calypso’s island · The Adriatic</p>
 <h2>Škaramuča Dingač</h2>
 <p class="where">Pelješac, Croatia</p>
+<figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Dinga%C4%8D_0892_D.jpg/1280px-Dinga%C4%8D_0892_D.jpg" alt="Aerial view of the steep Dingač vineyard slopes on the Pelješac peninsula" width="1280" height="853" loading="lazy" decoding="async"><figcaption>The steep Dingač slopes on the Pelješac peninsula. <span class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Dinga%C4%8D_0892_D.jpg" rel="noopener">Quahadi</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></figcaption></figure>
 <p class="story">Dingač’s vines cling to slopes so steep above the sea that growers carried the harvest out by donkey until they cut a tunnel through the hill in the 1970s. Across the channel lies Mljet, which local legend names as Ogygia, the island where Calypso kept Odysseus for seven years. In 1961 Dingač became the first Croatian wine with a protected origin. Its grape, Plavac Mali, is a child of Tribidrag, the variety America knows as Zinfandel.</p>
 <dl class="facts">
 <dt>Grape</dt><dd>Plavac Mali</dd>
@@ -270,6 +279,7 @@ html { scroll-behavior: smooth; }
 <p class="label">Homecoming · Ararat</p>
 <h2>Karas “Grand Karas”</h2>
 <p class="where">Armavir, Armenia</p>
+<figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Areni-1_cave_entrance.jpg/1280px-Areni-1_cave_entrance.jpg" alt="The rocky entrance to the Areni-1 cave in Armenia" width="1280" height="853" loading="lazy" decoding="async"><figcaption>The entrance to the Areni-1 cave, where the oldest known winery was found. <span class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Areni-1_cave_entrance.jpg" rel="noopener">Serouj</a>, <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener">CC BY 3.0</a>, via Wikimedia Commons</span></figcaption></figure>
 <p class="story">In Armenia’s Areni-1 cave, archaeologists found the oldest known winery: a press and fermentation jars about 6,100 years old. Karas farms volcanic soil in the Ararat Valley, below the mountain itself, and takes its name from the Armenian word for the clay amphora. Grand Karas is the estate’s flagship red, made from the best grapes of each harvest. Like Odysseus, we end where the story began.</p>
 <dl class="facts">
 <dt>Grapes</dt><dd>Syrah, Cabernet Franc, Montepulciano</dd>
